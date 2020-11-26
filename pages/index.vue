@@ -1,78 +1,82 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        yeet
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
-  </div>
+  <page>
+      <section class="rsvp">
+          <h2>Contact us</h2>
+          <form>
+              <div>
+                  <label>Your name (or stage name)</label>
+                  <input type="text" v-model="name"/>
+              </div>
+
+              <div>
+                  <label>Please write your message below:</label>
+                  <textarea v-model="message" rows="6"></textarea>
+              </div>
+
+              <div>            
+                  <label>How should we contact you? (optional)</label>
+                  <input type="text" v-model="contact"/>
+              </div>
+              
+              <div style="text-align: center">
+                  <div v-if="error">
+                    <p>There was an error sending your message.</p> 
+                    <p>Please email us at info@dance.coop if this isn't working.</p>
+                  </div>
+                  <div v-if="isSending">Sending ...</div>
+                  <div v-else-if="isSent">Sent. Thank you</div>
+                  <div v-else>
+                  <button 
+                      type="submit" 
+                      @click.prevent="sendLetter">Submit</button>
+                  </div>
+              </div>
+          </form>
+      </section>
+  </page>
 </template>
 
 <script>
-export default {}
+import axios from 'axios';
+import Page from '../components/Page.vue';
+
+export default {
+  components: { Page },
+  data() {
+    return {
+        name: null,
+        message: null,
+        contact: null,
+
+        isSending: false,
+        isSent: false,
+        error: null
+    };
+  },
+  methods: {
+    sendLetter: function () {
+      this.isSending = true;
+
+      var data = {
+        name: this.name,
+        contact: this.contact,
+        message: this.message,
+      };
+
+      axios.post('/api/letters', data)
+        .then(() => {
+          this.isSending = false;
+          this.isSent = true;
+        })
+        .catch(err => {
+          this.isSending = false;
+          this.error = err;
+        });
+    }
+  }   
+}
 </script>
 
-<style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+<style scoped>
 
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>
