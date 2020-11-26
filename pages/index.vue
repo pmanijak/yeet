@@ -1,7 +1,6 @@
 <template>
   <page>
       <section class="rsvp">
-          <h2>Contact us</h2>
           <form>
               <div>
                   <label>Your name (or stage name)</label>
@@ -21,14 +20,14 @@
               <div style="text-align: center">
                   <div v-if="error">
                     <p>There was an error sending your message.</p> 
-                    <p>Please email us at info@dance.coop if this isn't working.</p>
+                    <p>Please txt me if this isn't working.</p>
                   </div>
                   <div v-if="isSending">Sending ...</div>
                   <div v-else-if="isSent">Sent. Thank you</div>
                   <div v-else>
                   <button 
                       type="submit" 
-                      @click.prevent="sendLetter">Submit</button>
+                      @click.prevent="sendLetter">Send</button>
                   </div>
               </div>
           </form>
@@ -78,5 +77,7 @@ export default {
 </script>
 
 <style scoped>
-
+form div {
+  margin-top: 1.2em;
+}
 </style>
