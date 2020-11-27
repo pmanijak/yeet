@@ -19,17 +19,17 @@
       </p>
 
       <p>
-        The limit is $50 per person per month. The available funds will
-        increase by $200 each month (around the 10th?). It's not totally
-        anonymous, because I want to verify we know each other, and I need
-        a way to send the funds, but otherwise it is all confidential.
+        Each person can request up to $50 each month, until the available
+        funds are out. It's not totally anonymous, because I want to verify
+        we know each other, and I need a way to send the funds, but otherwise 
+        it is all confidential. More funds will be made available each month.
       </p>
 
       <template v-if="summary.available < 20">
-        <h4>Yeet is closed for the rest of the month</h4>
+        <h4>Yeet is closed for now</h4>
         <p>
           Thank you for visiting Yeet. The request form is closed 
-          at this time because there is fewer than $20 available.
+          because there are no more funds available for this month.
         </p>
         <p>&ndash; Phil</p>
       </template>
