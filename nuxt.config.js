@@ -8,7 +8,7 @@ export default {
     meta: [
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { property: 'og:description', content: description },
-      { property: 'og:image', content: `${domainUrl}/ograph-banner-nov-27.jpg` },
+      { property: 'og:image', content: `${domainUrl}/ograph-banner-nov-27b.jpg` },
       { property: 'og:image:height', content: '628' },
       { property: 'og:image:width', content: '1200' },
       { property: 'og:title', content: 'yeet' },
@@ -29,7 +29,7 @@ export default {
       name: 'yeet',
       description,
       ogHost: domainUrl,
-      ogImage: '/ograph-banner-nov-27.jpg',
+      ogImage: '/ograph-banner-nov-27b.jpg',
       // defaults take care of the rest
     }
   },
