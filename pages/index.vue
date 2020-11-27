@@ -19,10 +19,10 @@
       </p>
 
       <p>
-        Each person can request up to $50 each month, until the available
-        funds are out. It's not totally anonymous, because I want to verify
-        we know each other, and I need a way to send the funds, but otherwise 
-        it is all confidential. More funds will be made available each month.
+        Each person can request up to $50 each month. It's not totally 
+        anonymous, because I want to verify we know each other, and I need 
+        a way to send the funds, but otherwise it is all confidential. 
+        More funds will be made available each month.
       </p>
 
       <template v-if="summary.available < 20">
