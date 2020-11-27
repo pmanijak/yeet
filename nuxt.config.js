@@ -1,11 +1,19 @@
+const description = 'A small experiment in community funding, by Philip M.';
+const domainUrl = 'https://yeet.website';
+
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'yeet',
     meta: [
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { property: 'og:description', content: description },
+      { property: 'og:image', content: `${domainUrl}/ograph-banner-nov-27.jpg` },
+      { property: 'og:image:height', content: '628' },
       { property: 'og:image:width', content: '1200' },
-      { property: 'og:image:height', content: '628' }
+      { property: 'og:title', content: 'yeet' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: domainUrl }
       // other meta defined in the pwa module config below
     ],
     link: [
@@ -15,11 +23,13 @@ export default {
   },
 
   pwa: {
+    // pwa saves these as <meta name="..."> instead
+    // of <meta property="..."> so they don't work with FB
     meta: {
       name: 'yeet',
-      description: 'A small experiment in community funding, by Philip M.',
-      ogHost: 'https://yeet.website',
-      ogImage: '/img/ograph-banner-nov-27.jpg',
+      description,
+      ogHost: domainUrl,
+      ogImage: '/ograph-banner-nov-27.jpg',
       // defaults take care of the rest
     }
   },
