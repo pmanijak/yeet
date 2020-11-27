@@ -3,15 +3,33 @@
       <section class="rsvp">
           <form>
               <div>
-                  <label>Amount</label>
-                  <input type="text" v-model="amount"/>
+                  <label style="display: block">Amount</label>
+                  <button
+                    :class="{'selected': amount == '20'}"
+                    @click.prevent="setAmount('20')">$20</button>
+                <button
+                    :class="{'selected': amount == '30'}"
+                    @click.prevent="setAmount('30')">$30</button>
+                <button
+                    :class="{'selected': amount == '40'}"
+                    @click.prevent="setAmount('40')">$40</button>
+                <button
+                    :class="{'selected': amount == '50'}"
+                    @click.prevent="setAmount('50')">$50</button>
               </div>
+
               <div>
-                  <label>Method</label>
-                  <input type="text" v-model="method"/>
+                <label style="display: block">Method to receive funds</label>
+                <button
+                    :class="{'selected': method == 'Paypal'}"
+                    @click.prevent="setMethod('Paypal')">Paypal</button>
+                <button
+                    :class="{'selected': method == 'Venmo'}"
+                    @click.prevent="setMethod('Venmo')">Venmo</button>
               </div>
+
               <div>
-                  <label>Method detail</label>
+                  <label>{{ method }} username or whatever</label>
                   <input type="text" v-model="methodDetail"/>
               </div>
               <div>
@@ -52,7 +70,7 @@ export default {
     return {
         name: null,
         amount: null,
-        method: null,
+        method: "Venmo",
         methodDetail: null,
         notes: null,
 
@@ -82,12 +100,21 @@ export default {
           this.isSending = false;
           this.error = err;
         });
+    },
+    setAmount(val) {
+      this.amount = val;
+    },
+    setMethod(val) {
+      this.method = val;
     }
   }   
 }
 </script>
 
 <style scoped>
+button {
+  min-width: 90px;
+}
 form div {
   margin-top: 1.2em;
 }
