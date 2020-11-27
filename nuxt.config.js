@@ -6,13 +6,13 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'A small experiment in community funding, by Philip M.' },
-      
-      { hid: 'og:title', property: 'og:title', content='yeet' },
-      { hid: 'og:type', property: 'og:type', content='website' },
-      { hid: 'og:image', property: 'og:image', content='http://yeet.website/img/ograph-banner-nov-27.jpg' },
-      { hid: 'og:image:secure_url', property: 'og:image:secure_url', content='https://yeet.website/img/ograph-banner-nov-27.jpg' },
-      { hid: 'og:url', property: 'og:url', content='https://yeet.website' },
-      { hid: 'og:description', property: 'og:description', content='A small experiment in community funding, by Philip M.' },
+
+      { hid: 'og-title', property: 'og:title', content='yeet' },
+      { hid: 'og-type', property: 'og:type', content='website' },
+      { hid: 'og-image', property: 'og:image', content='http://yeet.website/img/ograph-banner-nov-27.jpg' },
+      { hid: 'og-image:secure_url', property: 'og:image:secure_url', content='https://yeet.website/img/ograph-banner-nov-27.jpg' },
+      { hid: 'og-url', property: 'og:url', content='https://yeet.website' },
+      { hid: 'og-description', property: 'og:description', content='A small experiment in community funding, by Philip M.' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
