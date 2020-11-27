@@ -3,18 +3,25 @@
       <section class="rsvp">
           <form>
               <div>
-                  <label>Your name (or stage name)</label>
+                  <label>Amount</label>
+                  <input type="text" v-model="amount"/>
+              </div>
+              <div>
+                  <label>Method</label>
+                  <input type="text" v-model="method"/>
+              </div>
+              <div>
+                  <label>Method detail</label>
+                  <input type="text" v-model="methodDetail"/>
+              </div>
+              <div>
+                  <label>Your name</label>
                   <input type="text" v-model="name"/>
               </div>
 
               <div>
-                  <label>Please write your message below:</label>
-                  <textarea v-model="message" rows="6"></textarea>
-              </div>
-
-              <div>            
-                  <label>How should we contact you? (optional)</label>
-                  <input type="text" v-model="contact"/>
+                  <label>Want to share anything?</label>
+                  <textarea v-model="notes" rows="6"></textarea>
               </div>
               
               <div style="text-align: center">
@@ -44,8 +51,10 @@ export default {
   data() {
     return {
         name: null,
-        message: null,
-        contact: null,
+        amount: null,
+        method: null,
+        methodDetail: null,
+        notes: null,
 
         isSending: false,
         isSent: false,
@@ -58,8 +67,10 @@ export default {
 
       var data = {
         name: this.name,
-        contact: this.contact,
-        message: this.message,
+        amount: this.amount,
+        method: this.method,
+        methodDetail: this.methodDetail,
+        notes: this.notes,
       };
 
       axios.post('/api/letters', data)
