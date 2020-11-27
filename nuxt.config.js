@@ -4,6 +4,8 @@ export default {
     title: 'yeet',
     meta: [
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { property: 'og:image:width', content: '1200' },
+      { property: 'og:image:height', content: '628' }
       // other meta defined in the pwa module config below
     ],
     link: [
