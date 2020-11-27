@@ -105,9 +105,9 @@ export default {
     return {
         name: null,
         amount: null,
-        method: "Venmo",
+        method: 'Venmo',
         methodDetail: null,
-        notes: null,
+        notes: '',
 
         isSending: false,
         isSent: false,
