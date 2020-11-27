@@ -3,8 +3,8 @@
       <section class="rsvp">
           <form>
               <div>
-                  <label style="display: block">Amount</label>
-                  <button
+                <label style="display: block">Amount</label>
+                <button
                     :class="{'selected': amount == '20'}"
                     @click.prevent="setAmount('20')">$20</button>
                 <button
@@ -113,7 +113,7 @@ export default {
 
 <style scoped>
 button {
-  min-width: 90px;
+  max-width: 90px;
 }
 form div {
   margin-top: 1.2em;

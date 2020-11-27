@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="app-view">
     <Nuxt />
   </div>
 </template>
@@ -21,6 +21,11 @@ html {
 *::after {
   box-sizing: border-box;
   margin: 0;
+}
+
+#app-view {
+    padding-left: 2ex;
+    padding-right: 2ex;
 }
 
 .main {
