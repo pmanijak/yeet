@@ -7,12 +7,12 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'A small experiment in community funding, by Philip M.' },
 
-      { property: 'og:title', content='yeet' },
-      { property: 'og:type', content='website' },
-      { property: 'og:image', content='http://yeet.website/img/ograph-banner-nov-27.jpg' },
-      { property: 'og:image:secure_url', content='https://yeet.website/img/ograph-banner-nov-27.jpg' },
-      { property: 'og:url', content='https://yeet.website' },
-      { property: 'og:description', content='A small experiment in community funding, by Philip M.' },
+      { property: 'og:title', content: 'yeet' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:image', content: 'http://yeet.website/img/ograph-banner-nov-27.jpg' },
+      { property: 'og:image:secure_url', content: 'https://yeet.website/img/ograph-banner-nov-27.jpg' },
+      { property: 'og:url', content: 'https://yeet.website' },
+      { property: 'og:description', content: 'A small experiment in community funding, by Philip M.' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
