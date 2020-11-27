@@ -4,7 +4,8 @@ const bodyParser = require('body-parser')
 const app = require('express')()
 const axios = require('axios');
 
-var slackUrl = process.env.SLACK_YEET_URL;
+const slackUrl = process.env.SLACK_YEET_URL;
+const maxAmount = 50;
 
 const Airtable = require('airtable');
 var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY })
@@ -14,6 +15,7 @@ app.use(bodyParser.json())
 app.post('/letters', (req, res) => {
     var data = req.body;
     var amount = Math.max(data.amount, 0);
+    amount = Math.min(amount, maxAmount);
 
     let fields = {
         Name: data.name,
