@@ -3,21 +3,23 @@ export default {
   head: {
     title: 'yeet',
     meta: [
-      { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'A small experiment in community funding, by Philip M.' },
-
-      { property: 'og:title', content: 'yeet' },
-      { property: 'og:type', content: 'website' },
-      { property: 'og:image', content: 'http://yeet.website/img/ograph-banner-nov-27.jpg' },
-      { property: 'og:image:secure_url', content: 'https://yeet.website/img/ograph-banner-nov-27.jpg' },
-      { property: 'og:url', content: 'https://yeet.website' },
-      { property: 'og:description', content: 'A small experiment in community funding, by Philip M.' },
+      // other meta defined in the pwa module config below
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Quicksand&display=swap"}
     ]
+  },
+
+  pwa: {
+    meta: {
+      name: 'yeet',
+      description: 'A small experiment in community funding, by Philip M.',
+      ogHost: 'https://yeet.website',
+      ogImage: '/img/ograph-banner-nov-27.jpg',
+      // defaults take care of the rest
+    }
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
