@@ -1,10 +1,44 @@
 <template>
   <page>
     <section class="rsvp">
-      <p>{{ summary.available }}</p>
-      <form>
+      <p>
+        Hey. Yeet is a small experiment in community funding.
+      </p>
+
+      <h3>How it works</h3>
+      <p>
+        It's 2020. This site is meant to be an easy way to ask for and
+        receive some money if it could help. It is run by Philip M. in 
+        Olympia, Washington.
+      </p>
+      
+      <p>
+        If you need any cash for any reason, and you know me, just
+        ask here. This form will send a notification to my phone, 
+        and I'll complete your request as soon as I can.
+      </p>
+
+      <p>
+        The limit is $50 per person per month. The available funds will
+        increase by $200 each month (around the 10th?). It's not totally
+        anonymous, because I want to verify we know each other, and I need
+        a way to send the funds, but otherwise it is all confidential.
+      </p>
+
+      <template v-if="summary.available < 20">
+        <h4>Yeet is closed for the rest of the month</h4>
+        <p>
+          Thank you for visiting Yeet. The request form is closed 
+          at this time because there is fewer than $20 available.
+        </p>
+        <p>&ndash; Phil</p>
+      </template>
+      <form v-else>
+        <h4>Available funds</h4>
+        ${{ summary.available }}
+
         <div>
-          <label style="display: block">Amount</label>
+          <label style="display: block">Amount to receive</label>
           <button
               :class="{'selected': amount == '20'}"
               @click.prevent="setAmount('20')">$20</button>
@@ -122,5 +156,8 @@ button {
 }
 form div {
   margin-top: 1.2em;
+}
+p {
+  margin-bottom: 1.2em;
 }
 </style>
